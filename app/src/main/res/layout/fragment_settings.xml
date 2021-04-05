@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <TextView
+                android:id="@+id/settings_app_settings_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/settings_app_settings_string"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settings_app_settings_text">
+
+                <TextView
+                    android:id="@+id/settings_unit_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_unit_header_string"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/settings_use_kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/settings_kg_label"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/settings_use_lbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_pounds_label"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <Switch
+                android:id="@+id/settings_body_weight_percent_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_percent_label"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/settings_body_weight_text"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/settings_body_weight_string"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/settings_body_weight_percent_switch"
+                android:visibility="visible"/>
+
+            <EditText
+                android:id="@+id/settings_body_weight_number"
+                android:imeOptions="actionDone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="3dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/settings_body_weight_text"
+                app:layout_constraintStart_toEndOf="@id/settings_body_weight_text"
+                app:layout_constraintEnd_toStartOf="@id/settings_body_weight_unit_text"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/settings_body_weight_unit_text"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="kg"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/settings_body_weight_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/settings_device_settings_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/settings_device_settings_string"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settings_body_weight_text" />
+
+            <TextView
+                android:id="@+id/settings_not_connected_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/settings_not_connected_string"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settings_device_settings_text" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/settings_device_settings_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settings_device_settings_text">
+
+                <Switch
+                    android:id="@+id/settings_threshold_per_sensor_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/settings_per_sensor_threshold_string"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                    />
+
+                <CheckBox
+                    android:id="@+id/settings_sensor4_enabled"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/settings_threshold_sensor4_text"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor4_text" />
+
+                <TextView
+                    android:id="@+id/settings_threshold_sensor4_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/settings_threshold_sensor4_string"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/settings_sensor4_enabled"
+                    app:layout_constraintTop_toBottomOf="@id/settings_threshold_per_sensor_switch" />
+
+                <EditText
+                    android:id="@+id/settings_threshold_sensor4_number"
+                    android:imeOptions="actionDone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="3dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor4_text"
+                    app:layout_constraintEnd_toStartOf="@id/settings_sensor4_unit_text"
+                    app:layout_constraintStart_toEndOf="@id/settings_threshold_sensor4_text" />
+
+                <TextView
+                    android:id="@+id/settings_sensor4_unit_text"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="kg"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor4_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="visible"/>
+
+                <CheckBox
+                    android:id="@+id/settings_sensor3_enabled"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/settings_threshold_sensor3_text"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor3_text" />
+
+                <TextView
+                    android:id="@+id/settings_threshold_sensor3_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/settings_threshold_sensor3_string"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/settings_sensor3_enabled"
+                    app:layout_constraintTop_toBottomOf="@id/settings_threshold_sensor4_text" />
+
+                <EditText
+                    android:id="@+id/settings_threshold_sensor3_number"
+                    android:imeOptions="actionDone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="3dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor3_text"
+                    app:layout_constraintEnd_toStartOf="@id/settings_sensor3_unit_text"
+                    app:layout_constraintStart_toEndOf="@id/settings_threshold_sensor3_text" />
+
+                <TextView
+                    android:id="@+id/settings_sensor3_unit_text"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="kg"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor3_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="visible"/>
+
+                <CheckBox
+                    android:id="@+id/settings_sensor2_enabled"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/settings_threshold_sensor2_text"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor2_text" />
+
+                <TextView
+                    android:id="@+id/settings_threshold_sensor2_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/settings_threshold_sensor2_string"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/settings_sensor2_enabled"
+                    app:layout_constraintTop_toBottomOf="@id/settings_threshold_sensor3_text" />
+
+                <EditText
+                    android:id="@+id/settings_threshold_sensor2_number"
+                    android:imeOptions="actionDone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="3dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor2_text"
+                    app:layout_constraintEnd_toStartOf="@id/settings_sensor2_unit_text"
+                    app:layout_constraintStart_toEndOf="@id/settings_threshold_sensor2_text" />
+
+                <TextView
+                    android:id="@+id/settings_sensor2_unit_text"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="kg"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor2_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="visible"/>
+
+                <CheckBox
+                    android:id="@+id/settings_sensor1_enabled"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/settings_threshold_sensor1_text"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor1_text" />
+
+                <TextView
+                    android:id="@+id/settings_threshold_sensor1_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/settings_threshold_sensor1_string"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/settings_sensor1_enabled"
+                    app:layout_constraintTop_toBottomOf="@id/settings_threshold_sensor2_text" />
+
+                <EditText
+                    android:id="@+id/settings_threshold_sensor1_number"
+                    android:imeOptions="actionDone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="3dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor1_text"
+                    app:layout_constraintEnd_toStartOf="@id/settings_sensor1_unit_text"
+                    app:layout_constraintStart_toEndOf="@id/settings_threshold_sensor1_text" />
+
+                <TextView
+                    android:id="@+id/settings_sensor1_unit_text"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="kg"
+                    android:textSize="20sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/settings_threshold_sensor1_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="visible"/>
+
+                <Switch
+                    android:id="@+id/settings_led_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/settings_led_string"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/settings_threshold_sensor1_text" />
+
+                <Switch
+                    android:id="@+id/settings_buzzer_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/settings_buzzer_string"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_led_switch" />
+
+
+                <Button
+                    android:id="@+id/settings_transmit_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/settings_transmit_string"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/settings_buzzer_switch" />
+
+                <Button
+                    android:id="@+id/settings_test_led_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/settings_test_led_string"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_transmit_btn" />
+
+                <Button
+                    android:id="@+id/settings_test_buzzer_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/settings_test_buzzer_string"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_test_led_btn" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,48 @@
+<resources>
+    <string name="product_name">ReBoot</string>
+    <string name="app_name">ReBoot</string>
+    <string name="bt_status">BT Status:</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_connected">Connected</string>
+    <string name="lbs">lbs</string>
+    <string name="kg">kg</string>
+    <string name="percent">%</string>
+    <string name="settings">Settings</string>
+    <string name="no_bluetooth">Bluetooth unavailable.</string>
+    <string name="select_device_available_devices">Select your device:</string>
+    <string name="select_device_refresh">Refresh</string>
+    <string name="live_view_title">Live View</string>
+    <string name="select_device_title">Device Setup</string>
+    <string name="select_device_no_device">No compatible devices found.\n\nPlease pair your device through the system settings and try again!</string>
+    <string name="device_address_saved">Device saved.</string>
+
+    //Settings
+    <string name="invalid_body_weight_string">Invalid body weight value.</string>
+    <string name="invalid_threshold_string">Invalid threshold value.</string>
+    <string name="settings_app_settings_string">App Settings</string>
+    <string name="settings_kg_label">Kilogram (kg)</string>
+    <string name="settings_pounds_label">Pounds (lbs)</string>
+    <string name="settings_percent_label">Use percent of body weight</string>
+    <string name="settings_unit_header_string">Weight Unit:</string>
+    <string name="settings_device_settings_string">Device Settings</string>
+    <string name="settings_not_connected_string">Device not found!\n\nPlease check the device connection and try again.</string>
+    <string name="settings_led_string">Enable LED</string>
+    <string name="settings_buzzer_string">Enable Buzzer</string>
+    <string name="settings_body_weight_string">Body weight</string>
+    <string name="settings_threshold_string">Threshold</string>
+    <string name="settings_test_led_string">Test LED</string>
+    <string name="settings_test_buzzer_string">Test Buzzer</string>
+    <string name="stop_string">Stop</string>
+    <string name="settings_transmit_string">Save to Device</string>
+    <string name="settings_per_sensor_threshold_string">Set thresholds per sensor</string>
+    <string name="settings_threshold_sensor1_string">Threshold (Heel)</string>
+    <string name="settings_threshold_sensor2_string">Threshold (Ball lat.)</string>
+    <string name="settings_threshold_sensor3_string">Threshold (Ball med.) </string>
+    <string name="settings_threshold_sensor4_string">Threshold (Toe)</string>
+    <string name="sensor_disabled_string">Dis.</string>
+    <string name="live_view_combined_load_string">Combined Load:</string>
+    <string name="live_view_max_label_1">Max. S1:</string>
+    <string name="live_view_max_label_2">Max. S2:</string>
+    <string name="live_view_max_label_3">Max. S3:</string>
+    <string name="live_view_max_label_4">Max. S4:</string>
+</resources>

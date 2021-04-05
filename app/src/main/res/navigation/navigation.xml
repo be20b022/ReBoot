@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/liveViewFragment">
+
+    <fragment
+        android:id="@+id/selectDeviceFragment"
+        android:name="at.uastw.medpr.reboot.ui.fragments.SelectDeviceFragment"
+        android:label="@string/select_device_title"
+        tools:layout="@layout/fragment_select_device">
+        <action
+            android:id="@+id/action_selectDeviceFragment_to_liveViewFragment"
+            app:destination="@id/liveViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="at.uastw.medpr.reboot.ui.fragments.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/liveViewFragment"
+        android:name="at.uastw.medpr.reboot.ui.fragments.LiveViewFragment"
+        android:label="@string/live_view_title"
+        tools:layout="@layout/fragment_live_view"/>
+</navigation>

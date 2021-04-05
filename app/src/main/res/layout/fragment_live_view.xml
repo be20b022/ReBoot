@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/soleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/entry_anim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/live_view_sensor4_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="262dp"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/soleView"
+            app:layout_constraintTop_toTopOf="@+id/soleView"
+            tools:text="100.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_sensor3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="262dp"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/soleView"
+            app:layout_constraintTop_toTopOf="@+id/soleView"
+            tools:text="100.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_sensor2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="256dp"
+            android:layout_marginTop="132dp"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/soleView"
+            app:layout_constraintTop_toTopOf="@+id/soleView"
+            tools:text="100.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_sensor1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="229dp"
+            android:layout_marginTop="361dp"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/soleView"
+            app:layout_constraintTop_toTopOf="@+id/soleView"
+            tools:text="100.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_bt_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="50dp"
+            android:text="@string/bt_status"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/live_view_device_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/status_connecting"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/live_view_combined_load_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/live_view_combined_load_string"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/live_view_combined_load_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/soleView" />
+
+        <TextView
+            android:id="@+id/live_view_combined_load_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="textEnd"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/live_view_combined_load_label"
+            app:layout_constraintTop_toBottomOf="@+id/soleView"
+            tools:text="178.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_sensor1_max_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/live_view_max_label_1"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_combined_load_label" />
+
+        <TextView
+            android:id="@+id/live_view_sensor1_max_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/live_view_sensor1_max_label"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_combined_load_label"
+            tools:text="78.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_sensor2_max_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/live_view_max_label_2"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/live_view_sensor2_max_text"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_combined_load_label" />
+
+        <TextView
+            android:id="@+id/live_view_sensor2_max_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_combined_load_label"
+            tools:text="78.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_sensor3_max_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/live_view_max_label_3"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_sensor1_max_label" />
+
+        <TextView
+            android:id="@+id/live_view_sensor3_max_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/live_view_sensor3_max_label"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_sensor1_max_text"
+            tools:text="78.3 lbs" />
+
+        <TextView
+            android:id="@+id/live_view_sensor4_max_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/live_view_max_label_4"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/live_view_sensor4_max_text"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_sensor2_max_label" />
+
+        <TextView
+            android:id="@+id/live_view_sensor4_max_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_view_sensor2_max_text"
+            tools:text="78.3 lbs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
