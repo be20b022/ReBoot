@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-612" />
-                            <option name="y" value="-3" />
+                            <option name="x" value="-643" />
+                            <option name="y" value="-6" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -31,7 +31,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_selectDeviceFragment_to_liveViewFragment2">
+                            <entry key="action_selectDeviceFragment_to_liveViewFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -46,7 +46,7 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-390" />
+                            <option name="x" value="-460" />
                             <option name="y" value="-6" />
                           </Point>
                         </option>

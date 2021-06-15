@@ -277,7 +277,6 @@ class SettingsFragment : Fragment(), OnConnectedListener {
             Values.setSensorThreshold(2, data[4].toFloat(), true)
             binding.settingsThresholdSensor2Number.setText(Values.getSensorThreshold(2, 1))
 
-
             Values.setSensorThreshold(3, data[5].toFloat(), true)
             binding.settingsThresholdSensor3Number.setText(Values.getSensorThreshold(3, 1))
 

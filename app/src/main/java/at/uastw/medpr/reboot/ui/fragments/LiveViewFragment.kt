@@ -16,6 +16,7 @@ import at.uastw.medpr.reboot.R
 import at.uastw.medpr.reboot.Toolbox
 import at.uastw.medpr.reboot.Values
 import at.uastw.medpr.reboot.databinding.FragmentLiveViewBinding
+import kotlin.math.abs
 
 /**
  *  Live View Fragment
@@ -130,12 +131,23 @@ class LiveViewFragment : Fragment(), OnConnectedListener {
             }
 
             // Sensor 1
-            if (data[2].toFloat() > -1.0f) {
-                if (data[2].toFloat() > sensor1Max) sensor1Max = data[2].toFloat()
-                sensorCombined += data[2].toFloat()
+            var sensor1 = data[2].toFloat()
+            if (sensor1 > -1.0f) {
+                sensor1 = abs(sensor1)
+                if (sensor1 < 1.0f) sensor1 = 0f
+                if (sensor1 > sensor1Max) sensor1Max = sensor1
+                sensorCombined += sensor1
 
-                val sensor1Text = Toolbox.convertToUserSetting(data[2], 1) + " $unit"
+                val sensor1Text = Toolbox.convertToUserSetting(sensor1.toString(), 1) + " $unit"
                 binding.liveViewSensor1Text.text = sensor1Text
+
+                if (sensor1 > Values.sensor1Threshold) {
+                    Log.i("SENSOR1", "S1: $sensor1 Th1: ${Values.sensor1Threshold}")
+                    binding.liveViewSensor1Text.setTextColor(resources.getColor(R.color.secondaryColor))
+                } else {
+                    binding.liveViewSensor1Text.setTextColor(resources.getColor(R.color.primaryTextColor))
+                }
+
                 val max1Text = Toolbox.convertToUserSetting(sensor1Max.toString(), 1) + " $unit"
                 binding.liveViewSensor1MaxText.text = max1Text
             } else {
@@ -145,12 +157,23 @@ class LiveViewFragment : Fragment(), OnConnectedListener {
             binding.liveViewSensor1Text.visibility = View.VISIBLE
 
             // Sensor 2
-            if (data[3].toFloat() > -1.0f) {
-                if (data[3].toFloat() > sensor2Max) sensor2Max = data[3].toFloat()
-                sensorCombined += data[3].toFloat()
+            var sensor2 = data[3].toFloat()
+            if (sensor2 > -1.0f) {
+                sensor2 = abs(sensor2)
+                if (sensor2 < 1.0f) sensor2 = 0f
+                if (sensor2 > sensor2Max) sensor2Max = sensor2
+                sensorCombined += sensor2
 
-                val sensor2Text = Toolbox.convertToUserSetting(data[3], 1) + " $unit"
+                val sensor2Text = Toolbox.convertToUserSetting(sensor2.toString(), 1) + " $unit"
                 binding.liveViewSensor2Text.text = sensor2Text
+
+                if (sensor2 > Values.sensor2Threshold) {
+                    Log.i("SENSOR2", "S2: $sensor2 Th2: ${Values.sensor2Threshold}")
+                    binding.liveViewSensor2Text.setTextColor(resources.getColor(R.color.secondaryColor))
+                } else {
+                    binding.liveViewSensor2Text.setTextColor(resources.getColor(R.color.primaryTextColor))
+                }
+
                 val max2Text = Toolbox.convertToUserSetting(sensor2Max.toString(), 1) + " $unit"
                 binding.liveViewSensor2MaxText.text = max2Text
             } else {
@@ -160,12 +183,22 @@ class LiveViewFragment : Fragment(), OnConnectedListener {
             binding.liveViewSensor2Text.visibility = View.VISIBLE
 
             // Sensor 3
-            if (data[4].toFloat() > -1.0f) {
-                if (data[4].toFloat() > sensor3Max) sensor3Max = data[4].toFloat()
-                sensorCombined += data[4].toFloat()
+            var sensor3 = data[4].toFloat()
+            if (sensor3 > -1.0f) {
+                sensor3 = abs(sensor3)
+                if (sensor3 < 1.0f) sensor3 = 0f
+                if (sensor3 > sensor3Max) sensor3Max = sensor3
+                sensorCombined += sensor3
 
-                val sensor3Text = Toolbox.convertToUserSetting(data[4], 1) + " $unit"
+                val sensor3Text = Toolbox.convertToUserSetting(sensor3.toString(), 1) + " $unit"
                 binding.liveViewSensor3Text.text = sensor3Text
+
+                if (sensor3 > Values.sensor3Threshold) {
+                    Log.i("SENSOR3", "S3: $sensor1 Th3: ${Values.sensor3Threshold}")
+                    binding.liveViewSensor3Text.setTextColor(resources.getColor(R.color.secondaryColor))
+                } else {
+                    binding.liveViewSensor3Text.setTextColor(resources.getColor(R.color.primaryTextColor))
+                }
 
                 val max3Text = Toolbox.convertToUserSetting(sensor3Max.toString(), 1) + " $unit"
                 binding.liveViewSensor3MaxText.text = max3Text
@@ -176,12 +209,22 @@ class LiveViewFragment : Fragment(), OnConnectedListener {
             binding.liveViewSensor3Text.visibility = View.VISIBLE
 
             // Sensor 4
-            if (data[5].toFloat() > -1.0f) {
-                if (data[5].toFloat() > sensor4Max) sensor4Max = data[5].toFloat()
-                sensorCombined += data[5].toFloat()
+            var sensor4 = data[5].toFloat()
+            if (sensor4 > -1.0f) {
+                sensor4 = abs(sensor4)
+                if (sensor4 < 1.0f) sensor4 = 0f
+                if (sensor4 > sensor4Max) sensor4Max = sensor4
+                sensorCombined += sensor4
 
-                val sensor4Text = Toolbox.convertToUserSetting(data[5], 1) + " $unit"
+                val sensor4Text = Toolbox.convertToUserSetting(sensor4.toString(), 1) + " $unit"
                 binding.liveViewSensor4Text.text = sensor4Text
+
+                if (sensor4 > Values.sensor4Threshold) {
+                    Log.i("SENSOR4", "S4: $sensor1 Th4: ${Values.sensor4Threshold}")
+                    binding.liveViewSensor4Text.setTextColor(resources.getColor(R.color.secondaryColor))
+                } else {
+                    binding.liveViewSensor4Text.setTextColor(resources.getColor(R.color.primaryTextColor))
+                }
 
                 val max4Text = Toolbox.convertToUserSetting(sensor4Max.toString(), 1) + " $unit"
                 binding.liveViewSensor4MaxText.text = max4Text
@@ -190,27 +233,33 @@ class LiveViewFragment : Fragment(), OnConnectedListener {
                 binding.liveViewSensor4MaxText.text = getString(R.string.sensor_disabled_string)
             }
             binding.liveViewSensor4Text.visibility = View.VISIBLE
+
+            val combinedText = Toolbox.convertToUserSetting(sensorCombined.toString(), 1) + " $unit"
+
+            binding.liveViewCombinedLoadText.text = combinedText
+            binding.liveViewCombinedLoadLabel.visibility = View.VISIBLE
+            binding.liveViewCombinedLoadText.visibility = View.VISIBLE
+
+            binding.liveViewSensor1MaxLabel.visibility = View.VISIBLE
+            binding.liveViewSensor1MaxText.visibility = View.VISIBLE
+
+            binding.liveViewSensor2MaxLabel.visibility = View.VISIBLE
+            binding.liveViewSensor2MaxText.visibility = View.VISIBLE
+
+            binding.liveViewSensor3MaxLabel.visibility = View.VISIBLE
+            binding.liveViewSensor3MaxText.visibility = View.VISIBLE
+
+            binding.liveViewSensor4MaxLabel.visibility = View.VISIBLE
+            binding.liveViewSensor4MaxText.visibility = View.VISIBLE
+
+            // Reset sensorCombined for next cycle
+            sensorCombined = 0.0f
+        } else if (data[0] == "T") {
+            Values.setSensorThreshold(1, data[1].toFloat(), true);
+            Values.setSensorThreshold(2, data[2].toFloat(), true);
+            Values.setSensorThreshold(3, data[3].toFloat(), true);
+            Values.setSensorThreshold(4, data[4].toFloat(), true);
         }
-        val combinedText = Toolbox.convertToUserSetting(sensorCombined.toString(), 1) + " $unit"
-
-        binding.liveViewCombinedLoadText.text = combinedText
-        binding.liveViewCombinedLoadLabel.visibility = View.VISIBLE
-        binding.liveViewCombinedLoadText.visibility = View.VISIBLE
-
-        binding.liveViewSensor1MaxLabel.visibility = View.VISIBLE
-        binding.liveViewSensor1MaxText.visibility = View.VISIBLE
-
-        binding.liveViewSensor2MaxLabel.visibility = View.VISIBLE
-        binding.liveViewSensor2MaxText.visibility = View.VISIBLE
-
-        binding.liveViewSensor3MaxLabel.visibility = View.VISIBLE
-        binding.liveViewSensor3MaxText.visibility = View.VISIBLE
-
-        binding.liveViewSensor4MaxLabel.visibility = View.VISIBLE
-        binding.liveViewSensor4MaxText.visibility = View.VISIBLE
-
-        // Reset sensorCombined for next cycle
-        sensorCombined = 0.0f
     }
 
     /**
@@ -221,6 +270,5 @@ class LiveViewFragment : Fragment(), OnConnectedListener {
     private fun onReceiveError(error: Throwable) {
         Log.e("[BT/RxError]", "" + error.message)
         Toast.makeText(this.context, "ERROR: " + error.message, Toast.LENGTH_LONG).show()
-
     }
 }
